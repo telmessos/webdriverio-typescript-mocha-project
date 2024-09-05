@@ -28,11 +28,6 @@ This will run the tests on https://ongitsolutions.nl/ URL. For local run please 
 Open terminal in the project folder after test execution and type
 
 ```javascript
-npm run report
-``` 
-and then
-
-```javascript
 allure serve allure-results
 ```
 

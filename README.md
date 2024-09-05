@@ -66,6 +66,7 @@ allure serve allure-results
 ## IMPORTANT NOTES - PLEASE READ
 - Number of test cases and content could be increased if there were "empty field and number of characters and alpha numeric character checks for both email and password fields"
 - Number of test cases and scenarios could be increased with different screen size etc., but as this is a home assignment, I didn't add such scenarios.
+- AddStep sections are added for better understanding on test steps and better display Allure Reports
 - Tests run with headless mode to execute on Docker. Docker is set and tested with Chrome only. To see the tests executing, you can remove '--headless', parameter in wdio.conf.ts line 54
 - Docker run creates a web server on Ubuntu, installs latest stable version of chrome driver, latest stable version of Chrome, copies the website, runs the tests automatically.
 - Env=web parameter executes the tests on https://ongitsolutions.com website. 

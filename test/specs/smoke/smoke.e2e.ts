@@ -1,37 +1,38 @@
 import { expect } from '@wdio/globals'
 import LoginPage from '../../../pageobjects/login.page.ts'
+import { addStep } from '@wdio/allure-reporter';
 
 describe('Verify login page elements', () => {
     it('Should login page elements be displayed', async () => {
-        // Visiting login page
+        addStep('Visiting login page')
         await LoginPage.open();
 
-        // Verify header text is displayed
+        addStep('Verify header text is displayed')
         const headerText = await LoginPage.pageHeaderElement.getText();
         await expect(headerText).toEqual(LoginPage.headerText);
 
-        // Verify email, password fields and login button is displayed
+        addStep('Verify email, password fields and login button is displayed')
         await LoginPage.verifyLoginElementsDisplayed();
 
-        // Verify footer text is displayed
+        addStep('Verify footer text is displayed')
         await LoginPage.verifyFooterTextDisplayed();
     })
 
     it('Should user page elements displayed after login', async () => {
 
-        // Login with admin@admin.com user
+        addStep('Login with admin@admin.com user')
         await LoginPage.login(LoginPage.users.adminUser, LoginPage.users.adminPassword);
 
-        // Verify home, products and contact links displayed
+        addStep('Verify home, products and contact links displayed')
         await LoginPage.verifyMenuElementsDisplayed();
 
-        // Verify user section displayed
+        addStep('Verify user section displayed')
         await expect(LoginPage.userSection).toBeDisplayed();
 
-        // Verify content text displayed
+        addStep('Verify content text displayed')
         await LoginPage.verifyContentTextDisplayed();
 
-        // Verify footer text is still displayed
+        addStep('Verify footer text is still displayed')
         await LoginPage.verifyFooterTextDisplayed();
     })
 })

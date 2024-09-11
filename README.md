@@ -43,7 +43,7 @@ docker build -t abnamrotest -f Dockerfile .
 **Important! If you have Apple Silicon MAC, please use below build command instead of above command and enable Rosetta. For more information please visit https://medium.com/@tomim/running-cypress-tests-on-chrome-in-docker-on-apple-silicon-macs-d08da8182d5e **
 
 ```javascript
-docker build --platform=linux/amd64 -t beyonnextest -f Dockerfile .
+docker build --platform=linux/amd64 -t abnamrotest -f Dockerfile .
 ```
 
 Once the Docker build is completed, to run a container with the built image, type: 
